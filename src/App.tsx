@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{useEffect} from 'react';
+import Card from "./components/cards";
+import {get_question} from './Api'
 import './App.css';
-
+import { typequiz } from './types';
 function App() {
+  useEffect(()=>{
+   async function fetchdata(){
+      const questions:typequiz[]= await  get_question(10,'medium');
+      console.log(questions)
+    }
+       
+      fetchdata()
+    },[])
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      
+      <Card/>
+
+        
     </div>
   );
 }
