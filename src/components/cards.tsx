@@ -1,13 +1,34 @@
-import React from 'react';
-import {Questiontype,typequiz} from './../types'
+import React, { useState } from 'react';
+import {proptype} from './../types'
 
-
-function Card() {
+const Card:React.FC<proptype>=({Question,Options,CallBack})=>{
+  let [selectedAns,setselectedAns]=useState("")
+const handleselection=(e:any)=>{
+ setselectedAns(e.target.value)
+}
   return (
-    <div>
-      
-      <h1>Hellow world</h1>
-        
+    <div className="QuestionContainer">
+      <div className="Question"> 
+      <h3>{Question}</h3>
+        </div>
+        <form onSubmit={(e:React.FormEvent<EventTarget>) => CallBack(e,selectedAns)}>
+          {Options.map((opt:string,ind:number)=>{
+return(
+<div key={ind}>
+  <label className="Radio">
+            <input
+           type= "radio"
+           name="opt"
+           required
+           checked={selectedAns===opt}
+          value={opt}
+           onChange={handleselection}
+            />{opt}
+          </label>
+          </div>)}
+          )}
+          <input type="submit" className="submit"/>
+        </form>
     </div>
   );
 }

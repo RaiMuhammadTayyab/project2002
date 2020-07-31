@@ -1,2 +1,43 @@
+.App{
+    text-align: center;
+    background-color: cornflowerblue;
+    ;
+}
+.App> h1{
+    text-shadow: 0px 4px 5px blueviolet
+}
+.QuestionContainer{
 
- 
+text-align: left;
+max-width: width 500px;
+box-shadow:0px 5px 24px rgb(108, 15, 202);
+margin-top: 25px;
+padding-top:3 ;
+padding-bottom:5px;
+padding-left: 5px;
+margin:0 auto;
+background-color: rgb(74, 124, 121);
+}
+.Question{
+    max-width: 100%;
+    text-shadow: 4px 6px 30px darkblue;
+    background-color: darkgray;
+    border-radius:5px ;
+}
+.submit{
+    width: 100%;
+    background-color: #1c1c1c;
+    color:#ffffff;
+    border-radius: 5px;
+    padding:10px;
+    margin-top: 10px;
+    box-align: center ;
+    
+}
+.Radio{
+    display: block;
+    margin:9px 0;
+}
+.QuestionContainer.result-container{
+    text-align: center;
+}

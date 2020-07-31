@@ -1,4 +1,4 @@
-
+import React from 'react'
 
 
 export type Questiontype={
@@ -15,6 +15,12 @@ export type typequiz={
 
     Question:string
     Option:string []
-    answer: string
+    answer: string 
     correct_answers: string
+}
+export type proptype={
+
+    Question:string
+    Options:string[]
+    CallBack:(e:React.FormEvent<EventTarget>, ans:string)=>void
 }
